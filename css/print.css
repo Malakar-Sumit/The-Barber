@@ -1,0 +1,306 @@
+/*** GLOBAL SETTING ***/
+body {margin:0; padding:0;font:normal 13px  "Karla", sans-serif; color:#5b5b5b; line-height:normal; background: #f5f2ea;;}
+
+/* font-family: "Karla", sans-serif;
+font-family: "Cookie", cursive;
+font-family: "Rufina", serif; */
+
+.container{max-width: min(1290px, 96%); width: auto; margin: 0 auto;}
+.sm-cont{max-width: min(1100px, 96%); width: auto; margin: 0 auto;}
+img{max-width: 100%; height: auto; width: auto;}
+.btn{margin-top: 30px; text-align: center; position: relative;}
+.btn a{font-size: 25px; font-weight: 500; color: #fff; display: inline-block; padding: 10px 20px; background: #d3a342; position: relative; box-sizing: border-box; z-index: 0; transition: .2s linear;}
+.btn a::before{content:""; position: absolute; top: 0; left:0; border: 3px solid transparent; width: 0; height: 0; box-sizing: border-box; z-index: 1;}
+.btn a::after{content:""; position: absolute; bottom: 0; right: 0; border: 3px solid transparent; width: 0; height: 0; box-sizing: border-box; z-index: 1;}
+.btn a:hover{background:transparent; color: #000;}
+.btn a:hover::before{width: 100%; height: 100%; border-top-color:#bd9137; border-right-color:#bd9137; transition: width 0.25s ease-in-out, height 0.25s ease-in-out 0.25s;}
+.btn a:hover::after{width: 100%; height: 100%; border-bottom-color: #bd9137; border-left-color:#bd9137; transition: border-color 0s ease-in-out 0.5s, width 0.25s ease-in-out 0.5s, height 0.25s ease-in-out 0.75s;}
+h3.title{font-size: 75px; font-weight: 700; color: #000; text-align: center; font-family: "Rufina", serif; line-height: 60px;}
+h3.title span{color: #bd9137;}
+
+.header{position: relative; overflow: hidden;}
+.headertop{padding: 20px 0;}
+.headertop .container{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 0;}
+.headertop .logo{display:flex; flex-flow:column wrap; align-items:center; gap:5px; z-index: 2;}
+.headertop .logo a span.title{font-size:54px; font-family: "Cookie", cursive; color:#000; letter-spacing: 1px; font-weight: 400; line-height: 40px; display: inline-block;}
+.headertop .logo a span.title span{color:#bd9137;}
+.headertop .leftnav ul li ,.rightnav ul li{display: inline-block; vertical-align: middle;}
+.headertop .leftnav ul li+li,.rightnav ul li+li{margin-left:55px;}
+.headertop .leftnav ul li a,.rightnav ul li a{font-size:20px; font-weight:500; color:#000; text-transform: uppercase; position: relative; padding-bottom: 5px; transition: .5s;}
+.headertop .leftnav ul li a::before,.rightnav ul li a::before{content:""; position: absolute; width: 100%; height: 2px; background: #bd9137; bottom: 0; left: 0; transform-origin: 0 0; transform: scaleX(0);transition: .3s linear;}
+.headertop .leftnav ul li a:hover,.rightnav ul li a:hover{color: #bd9137;}
+.headertop .leftnav ul li a:hover::before,.rightnav ul li a:hover::before{transform: scaleX(1);}
+.headertop .hamburger{display: none;}
+.headertop .hamburger .togglemenu{ display: inline-block; width: 55px; height: 55px; border-radius: 50%; box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.24); text-align: center; position: relative; z-index: 2;}
+.headertop .hamburger .togglemenu span{position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); height:2px; width:35px; border-radius:1px; background:#bd9137; display: block;}
+.headertop .hamburger .togglemenu span::before{position: absolute; content:""; background: #bd9137; width: 28px; height: 2px; top: -10px; left: 50%; transform: translateX(-50%); transition: .5s;}
+.headertop .hamburger .togglemenu span::after{position: absolute; content:""; background: #bd9137; width: 22px; height: 2px; bottom: -10px;
+left: 50%; transform: translateX(-50%); transition: .5s;}
+.headertop .hamburger .togglemenu:hover span::before{width: 40px;}
+.headertop .hamburger .togglemenu:hover span::after{width: 40px;}
+.headertop .hamburger .togglenav::before{ display: block; position: absolute; top: 0; left: 0; content: ''; width: 100vw; height: 100%; background: #fff; transition: all 500ms ease-in-out; clip-path: circle(35px at calc(100% - 50px) 80px); visibility: hidden; z-index: 1;}
+.headertop .hamburger.active .togglenav:before{visibility: visible; clip-path: circle(100%);}
+.headertop .hamburger.active .togglemenu span{height: 0;}
+.headertop .hamburger.active .togglemenu span::before{top: 0; width: 35px; transform:rotate(225deg); left:0; transition:.2s;}
+.headertop .hamburger.active .togglemenu span::after{top: 0; width: 35px; transform:rotate(-225deg); left:0; transition:.2s;}
+.headertop .hamburger.active .togglenav ul{display: block; transition: .5s;}
+.headertop .hamburger .togglenav ul{position: absolute; left: 20%; z-index: 2; margin-top: 50px; display: none;}
+.headertop .hamburger .togglenav ul li+li{ margin-top: 30px;}
+.headertop .hamburger .togglenav ul li a{font-size: 20px; color: #000; font-weight: 400; font-family: "Karla", sans-serif;}
+
+.bannersec{background: url(../images/banner-img.jpg) no-repeat top center; padding: 200px 0; position: relative; clip-path: polygon(0 0, 40% 0, 50% 5%, 60% 0, 100% 0, 100% 0, 100% 100%, 60% 100%, 50% 95%, 40% 100%, 0 100%, 0 100%); z-index: 0;}
+.bannersec::before{position: absolute; content:""; background: #000;width: 100%; height: 100%; left: 0; top: 0; opacity: .25; z-index: -1;}
+.bannersec h2{font-size: 60px; text-align: center; font-weight: 700; color: #fff; font-family: "Rufina", serif;}
+.bannersec h2 span{display: block;}
+.appointment-btn {text-align: center; margin-top: 50px;}
+.appointment-btn a{font-size:30px; font-weight:500; color:#fff; border:2px solid #fff; padding:10px 40px; position:relative; z-index:1; display: inline-block;}
+.appointment-btn a::before{position: absolute; content:""; background: #d3a342; width: 20%; height: 100%; right: 0px; top: 0; z-index: -1;clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%); transition: .5s ease-in-out;}
+.appointment-btn a:hover::before{width: 100%; clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); z-index: -2;} 
+
+.aboutsec{padding: 50px 0;}
+.aboutsec .aboutwrap{position: relative; display: inline-block; margin-top: 50px;}
+/* .aboutsec .aboutwrap .img img{background-repeat: no-repeat; background-position: right center;} */
+.aboutsec .aboutwrap::before{position:absolute; content:""; background: url(../images/about-img.jpg) no-repeat; width: 652px; height: 480px; right: 10%; top: 0;}
+.aboutsec .aboutwrap::after{position: absolute; content:""; background: url(../images/about-img2.jpg) no-repeat; width:261px; height:318px; right: 0; bottom: -25%; padding: 20px; background-position: 50%; border: 1px  dashed #d3a342; }
+.aboutsec .abouttxt{width: 60%; background: #ffffff95; position: relative; z-index: 1; margin-top: 50px; padding: 30px; box-sizing: border-box;}
+.aboutsec .abouttxt h4{font-size: 42px; font-weight: 700; color: #000; font-family: "Rufina", serif;} 
+.aboutsec .abouttxt h4 span{display: block;}
+.aboutsec .abouttxt p{font-size: 22px; font-weight: 400; color: #5b5b5b; margin-top: 45px; line-height: 30px;}
+
+.appointmentsec{background: url(../images/appointment-bg.jpg) no-repeat center center; padding: 100px 0; position: relative; z-index: 0; background-size: cover; margin-top: 100px;}
+.appointmentsec::before{content:''; position: absolute; background:#00000095; left: 0; right: 0; top: 0; bottom: 0; z-index: -1;}
+.appointmentsec h3{font-size: 45px; font-weight: 700; color: #fff; font-family: "Rufina", serif; text-align: center;}
+.appointmentsec h3 span{color: #d3a342;}
+.appointmentsec form{margin-top: 30px;}
+.appointmentsec form ul{display:flex; flex-wrap:wrap; gap:20px; justify-content:center;}
+.appointmentsec form ul li{ width:18.5%;}
+.appointmentsec form ul li input{width: 100%; height: 100%; padding: 10px; border: 1px solid #ffffff; background:transparent; box-sizing: border-box; border-radius: 5px; font-size: 18px; font-weight: 400; font-family: "Karla", sans-serif; color: #fff; }
+.appointmentsec form ul li select{background: transparent; padding:10px; font-size: 18px; font-weight: 400; font-family: "Karla", sans-serif; color: #fff; border: 1px solid #ffffff; border-radius: 5px; outline: none; width: 100%; height: 100%; box-sizing: border-box;}
+.appointmentsec form ul li select option{color: #bd9137; font-size: 16px; background: #000;}
+.appointmentsec form ul li input::placeholder{color:#fff;}
+.appointmentsec form ul li.button a{font-size: 18px; padding: 10px 0; color: #fff; background: #bd9137; box-sizing: border-box; width: 100%; display:block; border-radius: 5px; text-align: center; height: 100%;}
+
+.services{padding: 100px 0; text-align: center;}
+.services h4{font-size: 45px; font-weight: 700; color: #000; font-family: "Rufina", serif;}
+.services p{font-size: 20px; font-weight:400; color: #5b5b5b; margin-top: 30px;}
+.services p span{display: block;}
+.services .serviceswrap{margin-top: 50px;}
+.services .serviceswrap ul{display:flex; flex-wrap: wrap;gap: 30px; justify-content: center;}
+.services .serviceswrap ul li{position: relative; display: inline-block; width: 42%;}
+.services .serviceswrap ul li.short{width: 55%;}
+.services .serviceswrap ul li .img{overflow:hidden;}
+.services .serviceswrap ul li .img img{transition:.5s; height: 300px; min-width: 100%; object-fit: cover;}
+.services .serviceswrap ul li:hover img{transform:scale(1.1);}
+.services .serviceswrap ul li .imgtxt{position:absolute; bottom: 0; left: 0; right: 0}
+.services .serviceswrap ul li .imgtxt h5{ font-size:25px; font-weight:500; color:#fff; padding:30px; background:#00000040; transition:.5s;} 
+.services .serviceswrap ul li:hover .imgtxt h5{background:#bd9137;}
+
+.pricingsec{position: relative; overflow: hidden; padding: 50px 0;}
+.pricingsec ul{display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;}
+.pricingsec ul li{width: 33%; box-sizing: border-box; border: 2px solid #bd9137; position: relative;}
+.pricingsec ul li.men::before{content:""; position:absolute; background: url(../images/formen.jpg) no-repeat center center; width:500px; right:-2px; top:-10%; bottom:-10%; z-index:-2;}
+.pricingsec ul li.men::after{content:""; position: absolute; background: #00000050; width:500px; right:-2px; top:-10%; bottom:-10%; z-index: -1;}
+.pricingsec ul li.women::before{content:""; position:absolute; background: url(../images/forwomen.jpg) no-repeat top right;width:500px; left:-2px; top:-10%; bottom:-10%; z-index:-1;}
+.pricingsec ul li.women::after{content:""; position:absolute; background: #00000050; width:500px; top: -10%; bottom: -10%; left: -2px; z-index: -1;}
+.pricingsec ul li:nth-child(2){width: 29%; box-sizing: border-box; text-align: center; border: 0;}
+.pricingsec ul li h3{font-size: 25px; font-weight: 600; color: #fff; position: absolute; transform: translate(-50% , -50%); top: 50%; left: 50%;}
+.pricingsec ul li h3 span{display: block; font-size: 18px; font-weight: 500; color: #bd9137;}
+.pricingsec ul li h4{font-size:54px; font-family: "Cookie", cursive; color:#000; letter-spacing: 1px; font-weight: 400; margin-top: 10px; line-height: 40px;}
+.pricingsec ul li h4 span{color: #bd9137;}
+.pricingsec ul li h5{font-size: 20px; color: #000; font-weight: 400; font-family: "Rufina", serif; border-bottom: 2px solid #d3a342; margin-top: 10px; display: inline-block;}
+.pricingsec ul li p{margin-top: 20px; font-weight:500; font-size: 18px; color: #9e9e9e; line-height: 25px;}
+
+.gallerysec{padding: 100px 0;}
+.gallerysec h4{font-size: 45px; font-weight: 700; color: #000; font-family: "Rufina", serif; text-align: center;}
+.gallerywrap{max-width: 1070px; margin:  0 auto;}
+.gallerywrap ul{font-size: 0; margin-top: 100px; text-align: center;}
+.gallerywrap ul li{display:inline-block; vertical-align:top; width:25%; position:relative; /*border: 2px solid #bd9137; box-sizing: border-box; transform:rotate(45deg)*/}
+/* .gallerywrap ul li:nth-child(odd){margin-top: 200px;} */
+.gallerywrap ul li .img{display:inline-block; position:relative; } 
+.gallerywrap ul li .img img{clip-path:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);  transform:scale(1.1); transition:.5s;}
+.gallerywrap ul li::before{content:""; position:absolute; width:100%; height:100%; border:2px solid #d3a342; top:0; left:0; box-sizing:border-box; transform:rotate(45deg)}
+.gallerywrap ul li:hover img{transform:scale(1); transition:.5s;}
+
+.teamsec{padding:50px 0; text-align: center;}
+.teamsec h4{font-size: 45px; font-weight: 700; color: #000; font-family: "Rufina", serif;}
+.teamsec p{font-size: 20px; font-weight:400; color: #5b5b5b; margin-top: 30px;}
+.teamsec p span{display: block;}
+.teamsec .our-team{margin-top: 50px}
+.teamsec .our-team ul.teamwrap{margin-left: -3%; font-size: 0;}
+.teamsec .our-team ul.teamwrap li.team{width: 30.33%; margin-left: 3%; display: inline-block; vertical-align: top; position: relative; overflow: hidden;}
+.teamsec .our-team ul.teamwrap li.team .img img{transition: .5s}
+.teamsec .our-team ul.teamwrap li.team .imgtxt{position: absolute; bottom: -60px; left: 0; right: 0; background: #ffffff95; padding: 30px; transition: .5s;}
+.teamsec .our-team ul.teamwrap li.team .img{position: relative; display: inline-block;}
+.teamsec .our-team ul.teamwrap li.team:hover .imgtxt{bottom: 0;}
+.teamsec .our-team ul.teamwrap li.team .imgtxt h5{font-size: 25px; font-weight: 700; color: #000; font-family: "Rufina", serif;}
+.teamsec .our-team ul.teamwrap li.team .imgtxt span{font-size: 16px; font-weight: 500; color: #5b5b5b; font-family: "Karla", sans-serif; display: block; margin-top: 20px;}
+.teamsec .our-team ul.teamwrap li.team .social-icon{position: absolute; top: 10px; right: 0;}
+.teamsec .our-team ul.teamwrap li.team .social-icon ul{display: flex; gap: 10px; flex-wrap: wrap; flex-direction: column;}
+.teamsec .our-team ul.teamwrap li.team .social-icon ul li{padding: 10px; background: #ffffff95; border-radius: 20px; transition: .2s; transform: scale(0); }
+.teamsec .our-team ul.teamwrap li.team:hover .social-icon ul li{transform: scale(1); }
+.teamsec .our-team ul.teamwrap li.team:hover .social-icon ul li:nth-child(1){transition-delay: .2s;}
+.teamsec .our-team ul.teamwrap li.team:hover .social-icon ul li:nth-child(2){transition-delay: .4s;}
+.teamsec .our-team ul.teamwrap li.team:hover .social-icon ul li:nth-child(3){transition-delay: .6s;}
+.teamsec .our-team ul.teamwrap li.team:hover .social-icon ul li:nth-child(4){transition-delay: .8s;}
+.teamsec .our-team ul.teamwrap li.team:hover .social-icon ul li:hover{background: #bd9137; transition: .2s;}
+.teamsec .our-team ul.teamwrap li.team .social-icon ul li a{background: url(../images/social-icon.png) 4px -21px no-repeat; width: 20px; height: 20px; display: block;}
+.teamsec .our-team ul.teamwrap li.team .social-icon ul li:hover a.fb{background-position:4px 0px;}
+.teamsec .our-team ul.teamwrap li.team .social-icon ul li a.tw{background-position:-17px -21px;}
+.teamsec .our-team ul.teamwrap li.team .social-icon ul li:hover a.tw{background-position:-17px 0px;}
+.teamsec .our-team ul.teamwrap li.team .social-icon ul li a.ld{background-position:-39px -21px;}
+.teamsec .our-team ul.teamwrap li.team .social-icon ul li:hover a.ld{background-position:-39px 0px;}
+.teamsec .our-team ul.teamwrap li.team .social-icon ul li a.ig{background-position:-61px -21px;}
+.teamsec .our-team ul.teamwrap li.team .social-icon ul li:hover a.ig{background-position:-61px 0px;}
+
+.contactussec{padding: 50px 0; background: #ebe8de; text-align: center;}
+.contactussec .container{ position: relative;}
+.contactussec h4{font-size: 45px; font-weight: 700; color: #000; font-family: "Rufina", serif;}
+.contactussec h5{font-size:30px; font-weight:700; color:#000; font-family:"Rufina", serif; position:absolute; left:0; writing-mode:vertical-lr; transform: rotate(180deg); letter-spacing: 2px;}
+.contactussec p{font-size: 20px; font-weight: 400; color: #5b5b5b; margin-top: 20px;}
+.contactussec ul{max-width: 1000px; display: flex; margin: 0 auto; flex-wrap: wrap; gap: 30px; align-items: center; margin-top: 30px; justify-content: center; font-size: 0;}
+.contactussec ul li{width: 48%;}
+.contactussec ul li input{width: 100%; padding: 20px; box-sizing: border-box; background: transparent; color: #5b5b5b; font-size: 18px; font-weight: 400; border: 2px solid #bd9137; border-radius: 10px; font-family: "Karla", sans-serif}
+.contactussec ul li input ::placeholder{color: #5b5b5b;}
+.contactussec ul li.message{width: 100%;}
+.contactussec ul li.message textarea{height: 150px; width: 100%; padding: 20px;box-sizing: border-box; background: transparent; border: 2px solid #bd9137; border-radius: 10px; outline: none; font-size: 18px; font-weight: 400; color: #5b5b5b; font-family: "Karla", sans-serif}
+.contactussec ul li.button a{font-size: 25px; font-weight: 500; color: #fff; background: #bd9137; display:block; padding: 10px; border-radius: 10px;}
+
+.footersec{padding: 50px 0;}
+.footerwrap{margin-left: -3%; font-size: 0;}
+.footerwrap .footerdetails{display:inline-block; vertical-align:top; width:30.33%; margin-left: 3%; text-align: center;}
+.footerwrap .footerdetails.about h3 a{ font-size:40px; font-weight:400; color:#000; font-family:"Cookie", cursive; line-height:35px; display: inline-block;}
+.footerwrap .footerdetails.about h3 span{color: #bd9137;}
+.footerwrap .footerdetails.about p{font-size: 18px; font-weight: 400; color: #5b5b5b; font-family: "Karla", sans-serif; margin-top: 20px;}
+.footerwrap .footerdetails h3{font-size: 25px; font-weight:400; color:#000; font-family:"Rufina", serif; }
+.footerwrap .footerdetails .footernav ul{font-size: 0;}
+.footerwrap .footerdetails .footernav ul li{display: inline-block; vertical-align: top; width: 33.33%; margin-top: 20px;} 
+.footerwrap .footerdetails .footernav li a{font-size: 18px; font-weight: 400; color: #000; font-family: "Karla", sans-serif; transition: .2s;}
+.footerwrap .footerdetails .footernav li a:hover{color: #bd9137;}
+.footerwrap .footerdetails .footerlocation {text-align: left;}
+.footerwrap .footerdetails .footerlocation ul li{font-size:18px;  font-weight: 400; color: #5b5b5b; font-family: "Karla", sans-serif; margin-top: 20px; padding-left: 30px; position: relative;}
+.footerwrap .footerdetails .footerlocation ul li.location::before{content:""; position: absolute; background: url(../images/location.png) no-repeat; width: 20px; height: 20px; background-size: contain; left: 0; top: 50%; transform: translateY(-50%);}
+.footerwrap .footerdetails .footerlocation ul li.call::before{content:""; position: absolute; background: url(../images/phone.png) no-repeat; width: 20px; height: 20px; background-size: contain; left: 0; top: 50%; transform: translateY(-50%);}
+.footerwrap .footerdetails .footerlocation ul li.email::before{content:""; position: absolute; background: url(../images/email.png) no-repeat; width: 20px; height: 20px; background-size: contain; left: 0; top: 50%; transform: translateY(-50%);}
+.footerwrap .footerdetails .footerlocation ul li a{color: #000; transition: .2s;}
+.footerwrap .footerdetails .footerlocation ul li a:hover{color: #bd9137;}
+.socialicon ul{display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 30px;}
+.socialicon ul li{padding: 10px; border-radius: 50%; background: #ebe8de; transition: .2s linear;}
+.socialicon ul li:hover{ background: #bd9137;}
+.socialicon ul li a{background: url(../images/social-icon.png) no-repeat 4px -21px; width: 20px; height: 20px; display: block;}
+.socialicon ul li:hover a.fb{background-position:4px 0px;}
+.socialicon ul li a.tw{background-position:-17px -21px;}
+.socialicon ul li:hover a.tw{background-position:-17px 0px;}
+.socialicon ul li a.ld{background-position:-39px -21px;}
+.socialicon ul li:hover a.ld{background-position:-39px 0px;}
+.socialicon ul li a.ig{background-position:-61px -21px;}
+.socialicon ul li:hover a.ig{background-position:-61px 0px;}
+
+.footercopysec{padding: 30px 0;}
+.footercopysec .copysec p{font-size:20px; font-weight: 400; color: #5b5b5b; font-family: "Karla", sans-serif; text-align: center;}
+.footercopysec .copysec p a{color: #bd9137; transition: .5s;}
+.footercopysec .copysec p a:hover{text-decoration: underline;}
+
+@media only screen and ( max-width: 1280px ) {
+}
+@media only screen and ( max-width: 1024px ) {
+    .services .serviceswrap ul li{width: 41%;}
+    .pricingsec ul li{width: 32%;}
+    .gallerywrap ul li{width: 23%;}
+    .teamsec p span{display: inline;}
+    .contactussec ul{margin-left: 50px}
+    .contactussec h5{margin-top: 60px;}
+    .appointmentsec form ul li{width: 18%;}
+}
+@media only screen and ( max-width: 980px ) {
+}
+@media only screen and ( max-width: 800px ) {
+    .aboutsec,.services,.pricingsec,.gallerysec,.teamsec,.contactussec,.footersec{padding: 30px 0;}
+    .appointment-btn,.aboutsec .aboutwrap,.aboutsec .abouttxt p,.services .serviceswrap,.teamsec .our-team{margin-top: 30px;}
+    .aboutsec h3,.services h3,.gallerysec h3,.teamsec h3,.contactussec h3{font-size: 56px;}
+    .bannersec h2,.services h4,.gallerysec h4,.teamsec h4,.contactussec h4{font-size: 36px;}
+    .headertop .hamburger{display: block;}
+    .headertop .leftnav ,.rightnav {display: none;}
+    .headertop .logo a span.title{font-size: 44px; line-height: 35px;}
+    .bannersec{padding: 100px 0;}
+    .appointment-btn a{font-size: 24px;}
+    .aboutsec .aboutwrap::before{width: 100%; height: 100%; background-size: cover; left: 0;}
+    .aboutsec .abouttxt{width: 95%; margin: 20px; padding: 20px;}
+    .aboutsec .abouttxt h4 {font-size: 30px;}
+    .aboutsec .aboutwrap::after{display: none;}
+    .appointmentsec{margin-top: 30px; padding: 50px 0;}
+    .services p span,.aboutsec .abouttxt h4 span{display: inline;}
+    .aboutsec .abouttxt p{font-size: 18px; line-height: 25px;}
+    .services .serviceswrap ul li .img img{height: 230px;}
+    .services .serviceswrap ul li .imgtxt h5{font-size: 20px; padding: 20px;}
+    .pricingsec ul li:nth-child(2){order: 1; width: 100%;}
+    .pricingsec ul li:nth-child(1){order: 2; width: 47%; height: 200px;}
+    .pricingsec ul li:nth-child(3){order: 3; width: 47%; height: 200px;}
+    .pricingsec ul li.women::before{background-position: -430px -100px;}
+    .gallerywrap ul{margin-top: 60px;}
+    .appointmentsec form ul li{width: 48%;}
+    .appointmentsec form ul li.button,.contactussec ul li.button{width: 25%;}
+    .teamsec .our-team ul.teamwrap,.footerwrap{margin-left: 0; margin-top: -5%;}
+    .teamsec .our-team ul.teamwrap li.team,.footerwrap .footerdetails {width: 100%; margin-left: 0; margin-top: 5%;}
+    .contactussec ul li{width: 47%;}
+    .services .serviceswrap ul li{width: 40%;}
+}
+@media only screen and ( max-width: 768px ) {
+}
+@media only screen and ( max-width: 736px ) {
+}
+@media only screen and ( max-width: 667px ) {
+    .services .serviceswrap ul li,.services .serviceswrap ul li.short,.pricingsec ul li:nth-child(1),.pricingsec ul li:nth-child(3){width:100%;}
+    .pricingsec ul li.women::before {background-position: -360px -100px;}
+    .appointmentsec form ul li.button, .contactussec ul li.button {width: 35%;}
+    .pricingsec ul li.men::before,.pricingsec ul li.men::after,.pricingsec ul li.women::before,.pricingsec ul li.women::after{width:auto; left:0; right:0; top:0; bottom:0;}
+    .gallerywrap ul li{width: 35%;}
+    .aboutsec .abouttxt{width: 94%;}
+}
+@media only screen and ( max-width: 640px ) {
+}
+@media only screen and ( max-width: 600px ) {
+}
+@media only screen and ( max-width: 568px ) {
+    .contactussec ul li{width: 100%;}
+    .contactussec h5{margin-top: 100px;}
+    .bannersec h2, .services h4, .gallerysec h4, .teamsec h4, .contactussec h4{font-size: 24px;}
+    .aboutsec h3, .services h3, .gallerysec h3, .teamsec h3, .contactussec h3,.appointmentsec h3{font-size: 36px;}
+    .aboutsec .abouttxt{width: 93%;} 
+    .appointmentsec form ul{margin-left: 0;}
+    .appointmentsec form ul li{width: 100%; margin-left: 0;}
+    .services p,.pricingsec ul li p,.teamsec p,.pricingsec ul li h3,.contactussec p{font-size: 18px;}
+    .footercopysec .copysec p span{display: block;}
+    .appointment-btn a,.btn a,.contactussec ul li.button a{font-size: 20px;}
+}
+@media only screen and ( max-width: 480px ) {
+    .container{width: 90%;}
+    .aboutsec .abouttxt{width: 91%;}
+    .appointmentsec h3{font-size: 34px;}
+    .appointmentsec form ul li.button a,.footerwrap .footerdetails.about p,.footerwrap .footerdetails .footerlocation ul li,.footerwrap .footerdetails .footernav li a,.footercopysec .copysec p{font-size: 16px;}
+    .footerwrap .footerdetails h3{font-size: 22px;}
+    .footercopysec .copysec p span{display: block;}
+    .appointmentsec form ul li.button, .contactussec ul li.button{width: 45%;}
+    .contactussec h5,.aboutsec .abouttxt h4{font-size: 25px;}
+    .aboutsec .abouttxt p{font-size: 16px; line-height: normal;}
+}
+@media only screen and ( max-width: 414px ) {
+    .aboutsec .abouttxt{width: 89%;}
+    .aboutsec .abouttxt h4{font-size: 26px;}
+    .aboutsec .abouttxt p{font-size: 16px;}
+}
+@media only screen and ( max-width: 384px ) {
+    .aboutsec .abouttxt h4,.teamsec .our-team ul.teamwrap li.team .imgtxt h5,.contactussec h5{font-size: 22px;}
+    .headertop .logo a span.title{font-size: 32px; line-height: normal;}
+    .bannersec h2,.aboutsec .abouttxt h4,.appointment-btn a, .btn a, .contactussec ul li.button a {font-size: 18px;}
+    .appointmentsec form ul li select,.appointment-btn a,.appointmentsec form ul li input{font-size: 16px;}
+    .aboutsec h3, .services h3, .gallerysec h3, .teamsec h3, .contactussec h3, .appointmentsec h3{font-size: 30px;}
+    .appointmentsec form ul li.button, .contactussec ul li.button{width: 60%;}
+    .services h4, .gallerysec h4, .teamsec h4, .contactussec h4{font-size: 20px;}
+    .contactussec ul li input,.contactussec ul li.message textarea{padding: 10px; font-size: 16px;}
+}
+@media only screen and ( max-width: 375px ) {
+}
+@media only screen and ( max-width: 360px ) {
+}
+@media only screen and ( max-width: 320px ) {
+}
